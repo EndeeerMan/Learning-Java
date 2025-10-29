@@ -19,7 +19,10 @@ public class calculate{
     public static void main(String[] args) {
         Calculator calc = new Calculator();
         try(Scanner scanner = new Scanner(System.in)){
+            System.out.println("1.加法 2.减法 3.乘法 4.除法");
             int a = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("输入两个数字：");
             int b = scanner.nextInt();
             int c = scanner.nextInt();
             switch(a){
