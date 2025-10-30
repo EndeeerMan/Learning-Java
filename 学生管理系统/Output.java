@@ -1,10 +1,10 @@
-class Output {
-    public void Out(int num){
-        Student Stu = new Student();
-        System.out.println(Stu.getName(num));
-        System.out.println(Stu.getGender(num));
-        System.out.println(Stu.getAge(num));
-        System.out.println(Stu.getGrade(num));
-        System.out.println(Stu.getNumber(num));
+class Output extends Student{
+    public void Out(Student Stu,int num){
+        num -= 1;
+        System.out.println("姓名：" + Stu.getName(num));
+        System.out.println("性别：" + Stu.getGender(num));
+        System.out.println("年龄：" + Stu.getAge(num));
+        System.out.println("年级：" + Stu.getGrade(num));
+        System.out.println("学号：" + Stu.getNumber(num));
     }
 }

@@ -27,14 +27,17 @@ public class Main{
                     break;
                 case 2:
                     System.out.print("请输入序号：");
-                    O.Out(sc.nextInt());
+                    O.Out(Stu,sc.nextInt());
                     sc.nextLine();
+                    break;
                 case 3:
                     break outer;
                 }
             }
         }catch(InputMismatchException e){
             System.err.println("输入类型错误！");
+        }catch(IndexOutOfBoundsException e){
+            System.err.println("该序号学生不存在！");
         }catch(Exception e){
             System.err.println("其他错误！");
         }finally{
