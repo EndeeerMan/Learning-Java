@@ -26,6 +26,8 @@ public class Main {
             System.err.println("输入格式错误！");
         }catch(NegativeArraySizeException e){
             System.err.println("数组长度不能为负数！");
+        }catch(Exception e){
+            System.err.println("其它错误！");
         }
     }
 }
