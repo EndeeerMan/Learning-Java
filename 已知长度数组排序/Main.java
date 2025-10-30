@@ -10,7 +10,7 @@ public class Main {
             int size = sc.nextInt();
             sc.nextLine();
             int[] arr = new int[size];
-            System.out.println("请输入数组：");
+            System.out.print("请输入数组：");
             for(int i=0;i<size;i++){
                 arr[i] = sc.nextInt();
             }
