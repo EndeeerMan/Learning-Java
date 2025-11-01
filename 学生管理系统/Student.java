@@ -37,4 +37,19 @@ class Student {
     public long getNumber(int num){
         return Number.get(num);
     }
+    public void modName(int num,String Name){
+        this.Name.set(num,Name);  
+    }
+    public void modGender(int num,String Gender){
+        this.Gender.set(num,Gender);
+    }
+    public void modAge(int num,int Age){
+        this.Age.set(num,Age);
+    }
+    public void modGrade(int num,int Grade){
+        this.Grade.set(num,Grade);
+    }
+    public void modNumber(int num,long Number){
+        this.Number.set(num,Number);
+    }
 }
