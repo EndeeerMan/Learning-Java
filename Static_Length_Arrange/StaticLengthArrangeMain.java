@@ -1,11 +1,11 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class StaticLengthArrangeMain {
     public static void main(String[] args){
         System.out.print("请输入数组长度：");
         try(Scanner sc = new Scanner(System.in)){
-            Checker checker = new Checker();
+            Checker ck = new Checker();
             Sorting sorting = new Sorting();
             int size = sc.nextInt();
             sc.nextLine();
@@ -15,7 +15,7 @@ public class Main {
                 arr[i] = sc.nextInt();
             }
             sc.nextLine();
-            while(checker.check(arr, size) == -1){
+            while(ck.check(arr, size) == -1){
                 arr = sorting.sort(arr, size);
             }
             for(int i=0;i<=size-1;i++){

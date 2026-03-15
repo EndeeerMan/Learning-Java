@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main{
+public class Student_Manage_Main{
     public static void main(String[] args){
         Student Stu = new Student();
         Output O = new Output();
