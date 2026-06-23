@@ -1,6 +1,5 @@
 class Output extends Student{
     public void Out(Student Stu,int num){
-        num -= 1;
         System.out.println("姓名：" + Stu.getName(num));
         System.out.println("性别：" + Stu.getGender(num));
         System.out.println("年龄：" + Stu.getAge(num));

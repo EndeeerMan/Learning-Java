@@ -1,6 +1,6 @@
-class Sorting {
+class StaticLengthArrangeSorting {
     private int swapper;
-    public int[] Sorting(int arr[],int size){
+    public int[] sort(int arr[],int size){
         for(int i=0;i<=size-2;i++){
             if(arr[i]>arr[i+1]){
                 swapper = arr[i];
@@ -11,5 +11,4 @@ class Sorting {
         }
         return arr;
     }
-
 }
