@@ -5,17 +5,17 @@ public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         BigInteger num = sc.nextBigInteger();
-        int idx = sc.nextInt();
+        int index = sc.nextInt();
         BigInteger result = BigInteger.ONE;
 
         BigInteger num1 = num;
 
-        while(idx > 0){
-            if((idx & 1) == 1){
+        while(index > 0){
+            if((index & 1) == 1){
                 result = result.multiply(num1);
             }
-            idx >>= 1;
-            if(idx > 0) num1.pow(2);
+            index >>= 1;
+            if(index > 0) num1.pow(2);
         }
         System.out.println(result);
         sc.close();
