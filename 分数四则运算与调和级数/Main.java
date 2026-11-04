@@ -111,7 +111,7 @@ public class Main{
             int n = sc.nextInt();
             System.out.println();
 
-            Fraction result = new Fraction(BigInteger.ZERO, BigInteger.ZERO);
+            Fraction result = new Fraction(BigInteger.ZERO, BigInteger.ONE);
             for(int i=1;i<=n;++i){
                 Fraction temp = new Fraction(BigInteger.ONE,BigInteger.valueOf(i));
                 result = result.add(temp);
