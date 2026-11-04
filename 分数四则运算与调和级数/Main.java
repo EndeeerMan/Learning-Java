@@ -1,10 +1,14 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 
-class Fraction implements Comparable<Fraction>{
-    private BigInteger num,den;
+final class Fraction implements Comparable<Fraction>{
+    private final BigInteger num,den;
 
     public Fraction(BigInteger num, BigInteger den){
+        if(den.equals(BigInteger.ZERO)){
+            throw new ArithmeticException("Denominator Cannot be 0");
+        }
+
         if(num.compareTo(BigInteger.ZERO) > 0 && den.compareTo(BigInteger.ZERO) < 0){
             num = num.negate();
             den = den.abs();
@@ -15,16 +19,11 @@ class Fraction implements Comparable<Fraction>{
             den = den.abs();
         }
 
-        if(num.compareTo(BigInteger.ZERO) == 0 || den.compareTo(BigInteger.ZERO) == 0){
+        if(num.equals(BigInteger.ZERO)){
             den = BigInteger.ONE;
         }
 
         BigInteger gcd = num.abs().gcd(den);
-
-        if(gcd.compareTo(BigInteger.ONE) == 0){
-            this.num = num;
-            this.den = den;
-        }
 
         this.num = num.divide(gcd);
         this.den = den.divide(gcd);
@@ -91,13 +90,34 @@ class Fraction implements Comparable<Fraction>{
 public class Main{
     public static void main(String[] args) {
         try(Scanner sc = new Scanner(System.in)){
+            System.out.print("num1 = ");
             Fraction num1 = new Fraction(sc.nextBigInteger(),sc.nextBigInteger());
+            System.out.print("num2 = ");
             Fraction num2 = new Fraction(sc.nextBigInteger(),sc.nextBigInteger());
+
+            System.out.println();
+            System.out.println("num1 = " + num1);
+            System.out.println("num2 = " + num2);
+            System.out.println();
 
             System.out.println("ADD: " + num1.add(num2));
             System.out.println("SUB: " + num1.sub(num2));
             System.out.println("MUL: " + num1.multiply(num2));
             System.out.println("DIV: " + num1.divide(num2));
+            System.out.println("EQL: " + num1.equals(num2));
+            System.out.println();
+
+            System.out.print("Harmonic Series: n = ");
+            int n = sc.nextInt();
+            System.out.println();
+
+            Fraction result = new Fraction(BigInteger.ZERO, BigInteger.ZERO);
+            for(int i=1;i<=n;++i){
+                Fraction temp = new Fraction(BigInteger.ONE,BigInteger.valueOf(i));
+                result = result.add(temp);
+            }
+
+            System.out.println("H_n: " + result + '\n');
         }
     }
 }
